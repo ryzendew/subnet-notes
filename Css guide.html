@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Guide for Beginners</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+        
+        /* Navigation Styles */
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar a {
+            text-decoration: none;
+            color: #34495e;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Example Box Styles */
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            white-space: pre;
+            tab-size: 4;
+        }
+        
+        .demo-box {
+            border: 1px dashed #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        
+        .demo-element {
+            padding: 10px;
+            margin: 10px 0;
+            background: #3498db;
+            color: white;
+            border-radius: 4px;
+        }
+        
+        /* Interactive Examples */
+        .interactive-box {
+            background: #e8f4fc;
+            border: 1px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .interactive-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 8px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .demo-element-interactive {
+            padding: 20px;
+            margin: 15px 0;
+            background: #3498db;
+            color: white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Color examples */
+        .color-demo {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>CSS Topics</h2>
+            <ul>
+                <li><a href="#intro">Introduction to CSS</a></li>
+                <li><a href="#syntax">CSS Syntax</a></li>
+                <li><a href="#selectors">Selectors</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#box-model">Box Model</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#layout">Layout & Display</a></li>
+                <li><a href="#position">Positioning</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+                <li><a href="#responsive">Responsive Design</a></li>
+                <li><a href="#transitions">Transitions & Animations</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Complete CSS Guide for Beginners</h1>
+            
+            <section id="intro">
+                <h2>Introduction to CSS</h2>
+                <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+                
+                <div class="example-box">
+                    <h3>Why Use CSS?</h3>
+                    <ul>
+                        <li>Separation of content and presentation</li>
+                        <li>Consistent styling across multiple pages</li>
+                        <li>Faster page loading</li>
+                        <li>Easier maintenance</li>
+                        <li>Advanced control over layout</li>
+                    </ul>
+                </div>
+                
+                <h3>How to Add CSS to HTML</h3>
+                <p>There are three ways to add CSS to HTML:</p>
+                
+                <div class="code-block">/* 1. External CSS (Recommended) */
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+/* 2. Internal CSS */
+&lt;style&gt;
+    body {
+        background-color: lightblue;
+    }
+&lt;/style&gt;
+
+/* 3. Inline CSS */
+&lt;h1 style="color:blue;"&gt;Heading&lt;/h1&gt;</div>
+            </section>
+            
+            <section id="syntax">
+                <h2>CSS Syntax</h2>
+                <p>CSS consists of style rules that are interpreted by the browser and applied to the corresponding elements.</p>
+                
+                <div class="code-block">selector {
+    property: value;
+    property: value;
+}</div>
+                
+                <div class="example-box">
+                    <h3>CSS Rule Breakdown</h3>
+                    <ul>
+                        <li><strong>Selector:</strong> Points to the HTML element you want to style</li>
+                        <li><strong>Property:</strong> The style attribute you want to change</li>
+                        <li><strong>Value:</strong> The value you want to assign to the property</li>
+                    </ul>
+                </div>
+                
+                <div class="code-block">/* Example */
+h1 {
+    color: navy;
+    font-size: 24px;
+    text-align: center;
+}</div>
+                
+                <div class="demo-box">
+                    <h3 style="color: navy; font-size: 24px; text-align: center;">This is a styled heading</h3>
+                </div>
+            </section>
+            
+            <section id="selectors">
+                <h2>CSS Selectors</h2>
+                <p>Selectors are used to select the HTML elements you want to style.</p>
+                
+                <h3>Basic Selectors</h3>
+                
+                <div class="code-block">/* Element Selector */
+p {
+    color: red;
+}
+
+/* Class Selector */
+.my-class {
+    font-weight: bold;
+}
+
+/* ID Selector */
+#my-id {
+    background: yellow;
+}
+
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+}</div>
+                
+                <div class="demo-box">
+                    <p>This paragraph uses element selector</p>
+                    <p class="my-class">This paragraph uses class selector</p>
+                    <p id="my-id">This paragraph uses ID selector</p>
+                </div>
+                
+                <h3>Combination Selectors</h3>
+                
+                <div class="code-block">/* Descendant Selector */
+div p {
+    color: blue;
+}
+
+/* Child Selector */
+div > p {
+    font-size: 18px;
+}
+
+/* Adjacent Sibling Selector */
+h1 + p {
+    margin-top: 0;
+}
+
+/* General Sibling Selector */
+h1 ~ p {
+    color: green;
+}</div>
+                
+                <h3>Attribute Selectors</h3>
+                
+                <div class="code-block">/* Attribute exists */
+a[target] {
+    color: red;
+}
+
+/* Attribute equals value */
+input[type="text"] {
+    border: 1px solid #ccc;
+}
+
+/* Attribute contains value */
+a[href*="example"] {
+    color: blue;
+}</div>
+                
+                <h3>Pseudo-classes and Pseudo-elements</h3>
+                
+                <div class="code-block">/* Pseudo-classes */
+a:hover {
+    color: red;
+}
+
+li:first-child {
+    font-weight: bold;
+}
+
+input:focus {
+    border-color: blue;
+}
+
+/* Pseudo-elements */
+p::first-line {
+    font-weight: bold;
+}
+
+p::before {
+    content: ">> ";
+}
+
+p::after {
+    content: " <<";
+}</div>
+            </section>
+            
+            <section id="colors">
+                <h2>Colors in CSS</h2>
+                <p>CSS provides several ways to specify colors:</p>
+                
+                <div class="color-demo">
+                    <div class="color-box" style="background-color: red;">Named<br>red</div>
+                    <div class="color-box" style="background-color: #ff0000;">Hex<br>#ff0000</div>
+                    <div class="color-box" style="background-color: rgb(255, 0, 0);">RGB<br>rgb(255,0,0)</div>
+                    <div class="color-box" style="background-color: rgba(255, 0, 0, 0.5);">RGBA<br>rgba(255,0,0,0.5)</div>
+                    <div class="color-box" style="background-color: hsl(0, 100%, 50%);">HSL<br>hsl(0,100%,50%)</div>
+                    <div class="color-box" style="background-color: hsla(0, 100%, 50%, 0.5);">HSLA<br>hsla(0,100%,50%,0.5)</div>
+                </div>
+                
+                <div class="code-block">/* Different color formats */
+.color-example-1 {
+    color: blue;                    /* Named color */
+}
+
+.color-example-2 {
+    color: #0000ff;                 /* Hex color */
+}
+
+.color-example-3 {
+    color: rgb(0, 0, 255);          /* RGB color */
+}
+
+.color-example-4 {
+    color: rgba(0, 0, 255, 0.5);    /* RGBA color with transparency */
+}
+
+.color-example-5 {
+    color: hsl(240, 100%, 50%);     /* HSL color */
+}
+
+.color-example-6 {
+    color: hsla(240, 100%, 50%, 0.5); /* HSLA color with transparency */
+}</div>
+            </section>
+            
+            <section id="box-model">
+                <h2>CSS Box Model</h2>
+                <p>Every element in CSS is represented as a rectangular box. The box model describes how the element's content, padding, border, and margin interact.</p>
+                
+                <div class="interactive-box">
+                    <h3>Box Model Interactive Example</h3>
+                    <p>Adjust the values to see how they affect the element:</p>
+                    
+                    <div class="interactive-controls">
+                        <button onclick="updateBoxModel('margin', 10)">Margin: 10px</button>
+                        <button onclick="updateBoxModel('margin', 30)">Margin: 30px</button>
+                        <button onclick="updateBoxModel('padding', 10)">Padding: 10px</button>
+                        <button onclick="updateBoxModel('padding', 30)">Padding: 30px</button>
+                        <button onclick="updateBoxModel('border', 2)">Border: 2px</button>
+                        <button onclick="updateBoxModel('border', 10)">Border: 10px</button>
+                        <button onclick="resetBoxModel()">Reset</button>
+                    </div>
+                    
+                    <div id="box-model-demo" style="margin: 10px; padding: 10px; border: 2px solid #3498db; background: #e74c3c; color: white; text-align: center;">
+                        Content Area
+                    </div>
+                </div>
+                
+                <div class="code-block">.box {
+    width: 200px;           /* Content width */
+    height: 100px;          /* Content height */
+    padding: 20px;          /* Space inside the border */
+    border: 5px solid black; /* Border around the element */
+    margin: 15px;           /* Space outside the border */
+    
+    /* Total width = width + padding-left + padding-right + border-left + border-right */
+    /* Total height = height + padding-top + padding-bottom + border-top + border-bottom */
+}</div>
+                
+                <h3>Box-Sizing Property</h3>
+                <p>The box-sizing property controls how the total width and height of an element is calculated.</p>
+                
+                <div class="code-block">.content-box {
+    box-sizing: content-box; /* Default: width/height = content only */
+}
+
+.border-box {
+    box-sizing: border-box;  /* width/height = content + padding + border */
+}</div>
+            </section>
+            
+            <section id="typography">
+                <h2>Typography & Text Styling</h2>
+                <p>CSS provides extensive control over text appearance and formatting.</p>
+                
+                <h3>Font Properties</h3>
+                
+                <div class="code-block">.text-example {
+    font-family: Arial, sans-serif;  /* Font stack */
+    font-size: 16px;                 /* Font size */
+    font-weight: bold;               /* Font weight: normal, bold, 100-900 */
+    font-style: italic;              /* Font style: normal, italic, oblique */
+    line-height: 1.5;                /* Line spacing */
+}</div>
+                
+                <div class="demo-box">
+                    <p style="font-family: Arial, sans-serif; font-size: 16px; font-weight: normal;">Normal text</p>
+                    <p style="font-family: Georgia, serif; font-size: 18px; font-weight: bold; font-style: italic;">Bold italic text</p>
+                    <p style="font-family: 'Courier New', monospace; font-size: 14px; line-height: 2.0;">Monospace with increased line height</p>
+                </div>
+                
+                <h3>Text Properties</h3>
+                
+                <div class="code-block">.text-styling {
+    color: #333;                    /* Text color */
+    text-align: center;             /* Text alignment: left, right, center, justify */
+    text-decoration: underline;      /* Text decoration: none, underline, overline, line-through */
+    text-transform: uppercase;      /* Text transform: none, capitalize, uppercase, lowercase */
+    letter-spacing: 2px;            /* Space between letters */
+    word-spacing: 5px;              /* Space between words */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow: offset-x, offset-y, blur, color */
+}</div>
+                
+                <div class="demo-box">
+                    <p style="text-align: left;">Left aligned text</p>
+                    <p style="text-align: center;">Center aligned text</p>
+                    <p style="text-align: right;">Right aligned text</p>
+                    <p style="text-decoration: underline;">Underlined text</p>
+                    <p style="text-transform: uppercase;">uppercase text</p>
+                    <p style="letter-spacing: 3px;">Letter spacing example</p>
+                    <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Text with shadow</p>
+                </div>
+            </section>
+            
+            <section id="layout">
+                <h2>Layout & Display</h2>
+                <p>The display property determines how an element is displayed on the page.</p>
+                
+                <h3>Display Values</h3>
+                
+                <div class="code-block">.block-element {
+    display: block;     /* Takes full width, starts on new line */
+}
+
+.inline-element {
+    display: inline;    /* Takes only necessary width, flows with content */
+}
+
+.inline-block-element {
+    display: inline-block; /* Flows like inline but respects width/height */
+}
+
+.none-element {
+    display: none;      /* Completely removed from layout */
+}</div>
+                
+                <div class="demo-box">
+                    <div style="display: block; background: #3498db; color: white; padding: 10px; margin: 5px 0;">Block Element</div>
+                    <span style="display: inline; background: #e74c3c; color: white; padding: 10px; margin: 0 5px;">Inline Element 1</span>
+                    <span style="display: inline; background: #e74c3c; color: white; padding: 10px; margin: 0 5px;">Inline Element 2</span>
+                    <div style="display: inline-block; background: #2ecc71; color: white; padding: 10px; margin: 5px; width: 100px;">Inline-Block</div>
+                    <div style="display: inline-block; background: #2ecc71; color: white; padding: 10px; margin: 5px; width: 100px;">Inline-Block</div>
+                </div>
+            </section>
+            
+            <section id="position">
+                <h2>Positioning</h2>
+                <p>The position property specifies how an element is positioned in the document.</p>
+                
+                <div class="code-block">.static {
+    position: static;   /* Default, follows normal document flow */
+}
+
+.relative {
+    position: relative; /* Positioned relative to its normal position */
+    top: 10px;
+    left: 20px;
+}
+
+.absolute {
+    position: absolute; /* Positioned relative to nearest positioned ancestor */
+    top: 0;
+    right: 0;
+}
+
+.fixed {
+    position: fixed;    /* Positioned relative to viewport */
+    bottom: 20px;
+    right: 20px;
+}
+
+.sticky {
+    position: sticky;   /* Toggles between relative and fixed based on scroll */
+    top: 0;
+}</div>
+                
+                <div class="interactive-box">
+                    <h3>Positioning Interactive Example</h3>
+                    <div class="interactive-controls">
+                        <button onclick="changePosition('static')">Static</button>
+                        <button onclick="changePosition('relative')">Relative</button>
+                        <button onclick="changePosition('absolute')">Absolute</button>
+                        <button onclick="changePosition('fixed')">Fixed</button>
+                    </div>
+                    
+                    <div style="position: relative; height: 200px; border: 1px dashed #ccc; margin: 20px 0; padding: 10px;">
+                        <div id="position-demo" style="position: static; background: #3498db; color: white; padding: 15px; width: 150px;">
+                            Positioned Element
+                        </div>
+                        <div style="background: #e74c3c; color: white; padding: 15px; margin-top: 10px;">
+                            Other Element
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="flexbox">
+                <h2>Flexbox Layout</h2>
+                <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns.</p>
+                
+                <h3>Flex Container Properties</h3>
+                
+                <div class="code-block">.flex-container {
+    display: flex;
+    flex-direction: row;        /* Direction: row, row-reverse, column, column-reverse */
+    justify-content: center;    /* Horizontal alignment: flex-start, center, flex-end, space-between, space-around */
+    align-items: center;        /* Vertical alignment: stretch, flex-start, center, flex-end, baseline */
+    flex-wrap: wrap;            /* Wrapping: nowrap, wrap, wrap-reverse */
+    gap: 10px;                  /* Space between items */
+}</div>
+                
+                <h3>Flex Item Properties</h3>
+                
+                <div class="code-block">.flex-item {
+    flex-grow: 1;               /* Ability to grow if needed */
+    flex-shrink: 1;             /* Ability to shrink if needed */
+    flex-basis: 100px;          /* Default size before growing/shrinking */
+    align-self: center;         /* Override container's align-items */
+    order: 2;                   /* Order of appearance */
+}</div>
+                
+                <div class="interactive-box">
+                    <h3>Flexbox Interactive Example</h3>
+                    <div class="interactive-controls">
+                        <button onclick="changeFlexDirection('row')">Row</button>
+                        <button onclick="changeFlexDirection('column')">Column</button>
+                        <button onclick="changeJustifyContent('flex-start')">Justify Start</button>
+                        <button onclick="changeJustifyContent('center')">Justify Center</button>
+                        <button onclick="changeJustifyContent('space-between')">Space Between</button>
+                        <button onclick="changeAlignItems('stretch')">Align Stretch</button>
+                        <button onclick="changeAlignItems('center')">Align Center</button>
+                    </div>
+                    
+                    <div id="flex-demo" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; gap: 10px; height: 150px; border: 1px solid #ccc; padding: 10px;">
+                        <div style="background: #3498db; color: white; padding: 15px; flex: 1;">Item 1</div>
+                        <div style="background: #e74c3c; color: white; padding: 15px; flex: 2;">Item 2</div>
+                        <div style="background: #2ecc71; color: white; padding: 15px; flex: 1;">Item 3</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="grid">
+                <h2>CSS Grid Layout</h2>
+                <p>CSS Grid is a two-dimensional layout system for the web.</p>
+                
+                <h3>Grid Container Properties</h3>
+                
+                <div class="code-block">.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Column sizes */
+    grid-template-rows: 100px 200px;     /* Row sizes */
+    gap: 10px;                           /* Gap between grid items */
+    justify-items: center;               /* Horizontal alignment inside grid cells */
+    align-items: center;                 /* Vertical alignment inside grid cells */
+}</div>
+                
+                <h3>Grid Item Properties</h3>
+                
+                <div class="code-block">.grid-item {
+    grid-column: 1 / 3;        /* Item spans from column line 1 to 3 */
+    grid-row: 1;               /* Item placed in row 1 */
+    justify-self: start;       /* Horizontal alignment for individual item */
+    align-self: end;           /* Vertical alignment for individual item */
+}</div>
+                
+                <div class="interactive-box">
+                    <h3>Grid Interactive Example</h3>
+                    <div class="interactive-controls">
+                        <button onclick="changeGridTemplate('three-columns')">3 Columns</button>
+                        <button onclick="changeGridTemplate('two-columns')">2 Columns</button>
+                        <button onclick="changeGridTemplate('auto-fit')">Auto Fit</button>
+                    </div>
+                    
+                    <div id="grid-demo" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; border: 1px solid #ccc; padding: 10px;">
+                        <div style="background: #3498db; color: white; padding: 20px; text-align: center;">Grid Item 1</div>
+                        <div style="background: #e74c3c; color: white; padding: 20px; text-align: center;">Grid Item 2</div>
+                        <div style="background: #2ecc71; color: white; padding: 20px; text-align: center;">Grid Item 3</div>
+                        <div style="background: #f39c12; color: white; padding: 20px; text-align: center;">Grid Item 4</div>
+                        <div style="background: #9b59b6; color: white; padding: 20px; text-align: center;">Grid Item 5</div>
+                        <div style="background: #1abc9c; color: white; padding: 20px; text-align: center;">Grid Item 6</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="responsive">
+                <h2>Responsive Design</h2>
+                <p>Responsive design ensures your website looks good on all devices.</p>
+                
+                <h3>Media Queries</h3>
+                
+                <div class="code-block">/* Mobile First Approach */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}</div>
+                
+                <h3>Responsive Units</h3>
+                
+                <div class="code-block">.responsive-example {
+    width: 100%;           /* Percentage of parent */
+    max-width: 1200px;     /* Maximum width */
+    padding: 2rem;         /* Relative to root font size */
+    font-size: 1.2em;      /* Relative to parent font size */
+    margin: 0 auto;        /* Centering */
+    
+    /* Viewport units */
+    height: 50vh;          /* 50% of viewport height */
+    width: 80vw;           /* 80% of viewport width */
+}</div>
+            </section>
+            
+            <section id="transitions">
+                <h2>Transitions & Animations</h2>
+                <p>CSS allows you to create smooth transitions and animations.</p>
+                
+                <h3>Transitions</h3>
+                
+                <div class="code-block">.transition-example {
+    background: #3498db;
+    transition: all 0.3s ease;  /* property duration timing-function delay */
+}
+
+.transition-example:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
+}</div>
+                
+                <h3>Animations</h3>
+                
+                <div class="code-block">/* Define animation */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apply animation */
+.animated-element {
+    animation: slide-in 1s ease forwards;
+}</div>
+                
+                <div class="interactive-box">
+                    <h3>Animation Interactive Example</h3>
+                    <div class="interactive-controls">
+                        <button onclick="startAnimation('slide')">Slide In</button>
+                        <button onclick="startAnimation('bounce')">Bounce</button>
+                        <button onclick="startAnimation('rotate')">Rotate</button>
+                        <button onclick="resetAnimation()">Reset</button>
+                    </div>
+                    
+                    <div id="animation-demo" style="width: 100px; height: 100px; background: #3498db; margin: 20px auto;"></div>
+                </div>
+            </section>
+            
+            <div class="example-box">
+                <h3>CSS Best Practices</h3>
+                <ul>
+                    <li>Use external stylesheets for better maintainability</li>
+                    <li>Organize your CSS with comments and logical sections</li>
+                    <li>Use semantic class names that describe purpose, not appearance</li>
+                    <li>Follow a consistent naming convention (BEM, OOCSS, etc.)</li>
+                    <li>Use relative units (em, rem, %) for better responsiveness</li>
+                    <li>Minify CSS for production to improve loading times</li>
+                    <li>Use CSS variables for consistent theming</li>
+                    <li>Test your designs on multiple browsers and devices</li>
+                </ul>
+            </div>
+            
+            <p>This guide covers the fundamentals of CSS. Continue practicing and building projects to strengthen your skills!</p>
+        </main>
+    </div>
+
+    <script>
+        // Box Model Interactive Functions
+        function updateBoxModel(property, value) {
+            const demo = document.getElementById('box-model-demo');
+            
+            if (property === 'margin') {
+                demo.style.margin = value + 'px';
+            } else if (property === 'padding') {
+                demo.style.padding = value + 'px';
+            } else if (property === 'border') {
+                demo.style.border = value + 'px solid #3498db';
+            }
+        }
+        
+        function resetBoxModel() {
+            const demo = document.getElementById('box-model-demo');
+            demo.style.margin = '10px';
+            demo.style.padding = '10px';
+            demo.style.border = '2px solid #3498db';
+        }
+        
+        // Positioning Interactive Functions
+        function changePosition(position) {
+            const demo = document.getElementById('position-demo');
+            demo.style.position = position;
+            
+            if (position === 'static') {
+                demo.style.top = '';
+                demo.style.left = '';
+            } else if (position === 'relative') {
+                demo.style.top = '10px';
+                demo.style.left = '20px';
+            } else if (position === 'absolute') {
+                demo.style.top = '10px';
+                demo.style.right = '10px';
+                demo.style.left = '';
+            } else if (position === 'fixed') {
+                demo.style.bottom = '20px';
+                demo.style.right = '20px';
+                demo.style.top = '';
+                demo.style.left = '';
+            }
+        }
+        
+        // Flexbox Interactive Functions
+        function changeFlexDirection(direction) {
+            const demo = document.getElementById('flex-demo');
+            demo.style.flexDirection = direction;
+        }
+        
+        function changeJustifyContent(justify) {
+            const demo = document.getElementById('flex-demo');
+            demo.style.justifyContent = justify;
+        }
+        
+        function changeAlignItems(align) {
+            const demo = document.getElementById('flex-demo');
+            demo.style.alignItems = align;
+        }
+        
+        // Grid Interactive Functions
+        function changeGridTemplate(type) {
+            const demo = document.getElementById('grid-demo');
+            
+            if (type === 'three-columns') {
+                demo.style.gridTemplateColumns = '1fr 1fr 1fr';
+            } else if (type === 'two-columns') {
+                demo.style.gridTemplateColumns = '1fr 1fr';
+            } else if (type === 'auto-fit') {
+                demo.style.gridTemplateColumns = 'repeat(auto-fit, minmax(150px, 1fr))';
+            }
+        }
+        
+        // Animation Interactive Functions
+        function startAnimation(type) {
+            const demo = document.getElementById('animation-demo');
+            demo.style.animation = '';
+            
+            // Force reflow
+            void demo.offsetWidth;
+            
+            if (type === 'slide') {
+                demo.style.animation = 'slideIn 1s ease forwards';
+            } else if (type === 'bounce') {
+                demo.style.animation = 'bounce 1s ease infinite';
+            } else if (type === 'rotate') {
+                demo.style.animation = 'rotate 2s linear infinite';
+            }
+        }
+        
+        function resetAnimation() {
+            const demo = document.getElementById('animation-demo');
+            demo.style.animation = '';
+        }
+        
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                0% { transform: translateX(-100px); opacity: 0; }
+                100% { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-20px); }
+            }
+            
+            @keyframes rotate {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
